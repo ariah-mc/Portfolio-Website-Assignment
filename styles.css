@@ -1,0 +1,261 @@
+/*
+Ok....I got a little carried away, but I figured I could use this as a template,
+and I was having fun
+
+The CSS is really junky, I'm sure there are a lot of extra/meaningless lines, 
+I was throwing stuff at the wall to see what stuck for a while as I was trying 
+to find the functionality I was looking for...
+I then didn't want to delete out anything that might break something,
+so left a lot of it.
+
+
+And then I had a few questions:
+
+1. My links ul in the navbar is spaced slightly differently on my Bio and Contact
+pages compared to the rest of them, so it jumps when I go between.  This doesn't
+happen when I preview on my phone, only on my laptop.  Tried to figure out why,
+I assume it's inheriting something from a parent differently in the two conditions,
+but haven't been able to see what (been comparing code and looking at Devtools)
+
+2. "About Me" in the links ul was wrapping to a second line when I made the
+window real narrow (like phone narrow(?)) and I couldn't figure out how to
+force it not to, so I just changed the name to "Bio" so it couldn't, 
+but figured I should know how to do that
+
+3. I wasn't able to get my footer background color to change - again, I assume
+it must be inheriting the white background from something, but can't figure
+out where
+
+4. And then I wan't able to get the footer to anchor to the bottom of the page
+on the Projects pages and have the hero section fill 
+*/
+
+/* phone res */
+@media (max-width: 480px) {
+    * {
+        font-size: 14px;
+    }
+    .name {
+      font-size: medium;
+    }
+    .responsive-img{
+      height: 100%;
+      width: 100%;
+    }
+}
+
+/* tablet res */
+@media (min-width: 481px) and (max-width: 768px) {
+    * {
+        font-size: 16px;
+    }
+    .name {
+      font-size: large;
+    }
+    .responsive-img{
+      height: 100%;
+      width: 75%;
+    }
+}
+
+/* laptop & desktop res */
+@media (min-width: 769px) {
+    .name {
+      font-size: x-large;
+    }
+    .responsive-img{
+      height: 100%;
+      width: 50%;
+    }
+}
+
+ * {                         
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} 
+
+.little-c {
+  vertical-align: 3px;
+  font-size: 26px;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(74, 74, 74);
+}
+
+body {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background-color: #222;
+  color: rgb(187, 187, 187);
+  padding: 10px 20px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: flex;
+  justify-content: space-between;
+}
+
+.name {
+  font-weight: normal;
+  display: inline-block;
+  align-items: flex-end;
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul li {
+    list-style: none;
+    flex: flex-align;
+}
+
+.navbar a {
+  color: rgb(215, 215, 215);
+  margin: 0 15px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #ff9900;
+}
+
+.hero {
+  color: rgb(177, 167, 157);
+  background-color: #374650;
+  padding: 50px 20px;
+  flex: 1;
+}
+
+.hero img {
+  width: 100%;
+  height: 600px;
+  filter: saturate(80%) brightness(90%);
+  display:flex;
+  object-fit: cover;
+  object-position: 30% 50%;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+.contact {
+  background-color: #cecece;
+  padding: 50px 20px;
+}
+
+.contact li {
+  list-style: none;  
+}
+
+.projects {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  color: rgb(74, 74, 74);
+}
+
+.project-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  text-decoration: none;
+}
+
+h2 {
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+/* project cards section */
+.project {
+  background-color: white;
+  border: 1px solid #ddd;
+  width: 300px;
+  height: 330px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px  #dadcdd;
+  overflow: hidden; 
+}
+
+.project:hover {
+  box-shadow: 0 4px 8px  #e8e9ea;/
+}
+
+.card {
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px grey;
+}
+
+.card-header {
+    text-transform: uppercase;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+/* card images */
+.project img {
+    width: 100%;
+    height: 200px;
+    padding: 0px;
+    object-fit: cover;
+}
+
+/* end project cards section */
+
+/* project pages */
+.project-hero {
+  color: rgb(177, 167, 157);
+  background-color: #374650;
+  padding: 50px 20px;
+}
+
+.fullres-img {
+  width: 100%;
+  height: 100%;
+  /* filter: saturate(80%) brightness(90%); */
+}
+/* end project pages */
+
+footer {
+  background-color: #222;
+  color: white;
+  padding: 15px;
+  font-size: 14px;
+}
+
+.footer-text {
+  text-align: center;
+  padding: 20px 20px 7px 20px;
+}
+
+.social-icons {
+    text-align: center;
+    gap: 50px;
+}
+
+.icon {
+    /* color: #000; */
+    font-size: 24px;
+    text-decoration: none;
+    padding: 10px 7px 12px 7px;
+    text-align: center;
+    transition: color 0.3s;
+}
+
+.icon:hover {
+    color: #ff9900;
+}
